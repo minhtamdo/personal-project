@@ -1,0 +1,34 @@
+<!-- wishlist.html -->
+{% extends 'index.html' %}
+{% load static %}
+{% block head %}
+    {{ block.super }}
+    <link rel="stylesheet" href="{% static 'staticfiles/css/wishlist.css' %}">
+    <script src="{% static 'staticfiles/js/wishlist.js' %}" defer></script>
+{% endblock %}
+{% block content %}
+<body>
+    <div class="wishlist">
+        <h2>Your Wishlist</h2>
+        <ul class="wishlist-items">
+            {% for item in items %}
+            <li id="item-{{ item.id }}" class="wishlist-item">
+                <a href="{% url 'item_detail' item.id %}">
+                    <img src="{% if item.image %}{{ item.image.url }}{% else %}{{ default_image_url }}{% endif %}" alt="{{ item.name }}" />
+                    <p>{{ item.name }}</p>
+                </a>
+                <form action="{% url 'remove_from_wishlist' item.id %}" method="post" class="remove-form">
+                    {% csrf_token %}
+                    <button type="submit">Remove from Wishlist</button>
+                </form>
+            </li>
+            {% empty %}
+            <li class="wishlist-item empty">Your wishlist is empty.</li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+    <a id="continue" href="{% url 'index' %}">Continue shopping</a>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,47 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block head %}
+    {{ block.super }}
+    <!-- Additional CSS specific to product_class_detail.html -->
+    <link rel="stylesheet" href="{% static 'staticfiles/css/product_class_detail.css' %}">
+    <script src="{% static 'staticfiles/js/product_class_detail.js' %}"></script>
+
+{% endblock %}
+
+{% block content %}
+    <br>
+
+    <!-- Header and Section content omitted for brevity -->
+
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 mt-5">
+            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-left">
+                {% for item_with_price in items_with_prices %}
+                <div class="col mb-3">
+                    <a href="{% url 'item_detail' item_with_price.item.pk %}" class="text-decoration-none">
+                    <div class="card h-100">
+                        <!-- Product image and details -->
+                        <img class="card-img-top" src="{{ item_with_price.item.image.url }}" alt="{{ item_with_price.item.name }}" />
+                        <div class="card-body p-3">
+                            <div class="text-center">
+                                <h6 class="fw-bolder">{{ item_with_price.item.name }}</h6>
+                                <p class="fw-bold">¥{{ item_with_price.price }}
+                                </p> <!-- Display price of the first product -->
+                            </div>
+                        </div>
+                        <!-- Product actions -->
+                        <div class="text-center">
+                            <a class="btn btn-outline-dark btn-view mt-auto" href="{% url 'item_detail' item_with_price.item.pk %}">View</a>
+                        </div>   
+                        <br>                     
+                    </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer and scripts omitted for brevity -->
+{% endblock %}

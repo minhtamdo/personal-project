@@ -1,0 +1,60 @@
+h2 {
+    margin: 130px 0px 20px 0px;
+    margin-left: 5%;
+}
+table {
+    width: 80%;
+    margin-left: 5%;
+    border-collapse: collapse; /* Collapse borders between cells */
+    border: 2px solid #ddd; /* Add a border around the table */
+}
+
+th, td {
+    padding: 10px; /* Add padding inside table cells */
+    text-align: left; /* Align text to the left */
+    border: 1px solid #ddd; /* Add borders to table cells */
+}
+
+th {
+    background-color: #f2f2f2; /* Background color for table header */
+}
+
+/* Adjust width of specific columns */
+th:nth-child(2), td:nth-child(2), /* Color column */
+th:nth-child(3), td:nth-child(3), /* Size column */
+th:nth-child(4), td:nth-child(4) { /* Price column */
+    width: 120px; /* Adjust width as needed */
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-controls button {
+    padding: 4px 8px; /* Adjust padding for increase/decrease buttons */
+    font-size: 10px; 
+    font-weight: bolder;/* Adjust font size for buttons */
+}
+
+.quantity-controls input[type="number"] {
+    width: 50px;
+    padding: 0px 10px;
+    margin: 0px 10px; /* Adjust width of the quantity input */
+    text-align: center; /* Center align text in input */
+}
+
+h4 {
+    margin: 20px 0px 0px 70%;
+}
+
+#checkout-button {
+    margin: 10px 0px 0px 80%;
+    padding: 10px 20px;
+}
+#continue {
+    margin: 20px 80px;
+    font-size: 22px;
+    font-weight: bold;
+    color:#7F0019
+}

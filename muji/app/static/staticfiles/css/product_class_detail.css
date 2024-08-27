@@ -1,0 +1,49 @@
+.py-5 {
+    margin-top: 35px;
+}
+.card-img-top {
+    object-fit: cover; 
+    height: 300px; 
+    width: 100%
+}
+
+.card-body {
+    height: 100px;
+}
+
+.fw-bolder, .fw-bold{
+    font-size: 15px;
+    display: flex;
+    text-align: left;
+}
+
+.fw-bold {
+  color: #7f0019;
+}
+
+.card {
+    text-decoration: none;
+    border: 1px solid #343a40; /* Bolder border color */ /* Remove default link decoration */
+}
+
+.card a {
+    color: inherit; /* Inherit color from parent element */
+    text-decoration: none; /* Ensure no underline */
+}
+
+
+/* product_class_detail.css */
+
+.btn-view {
+    border: 1px solid #343a40; /* Border color */
+    padding: 5px 20px; /* Padding to adjust button size */
+    transition: border-color 0.15s ease-in-out, color 0.15s ease-in-out, background-color 0.15s ease-in-out; /* Transition effect */
+}
+
+.btn-view:hover {
+    border-color: #212529; /* Darker border color on hover */
+    color: white; /* Darker text color on hover */
+    text-decoration: none; /* Remove underline on hover */
+}
+
+

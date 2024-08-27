@@ -1,0 +1,99 @@
+/* wishlist.css */
+
+/* General Styles for the Wishlist */
+.wishlist {
+    max-width: 800px;
+    margin: 120px auto 0; 
+    padding: 10px 20px;
+    background-color: #f9f9f9;
+    border: 1px solid #333;
+    border-radius: 8px;
+}
+
+/* Header Styles */
+.wishlist h2 {
+    text-align: center;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Styles for the Wishlist Items List */
+.wishlist-items {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.wishlist-items li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    position: relative;
+    transition: transform 0.3s ease, opacity 0.3s ease; /* Add transition for smooth sliding */
+}
+
+.wishlist-items li.hidden {
+    transform: scaleY(0);
+    opacity: 0;
+    height: 0; /* Optional: to collapse the height */
+    overflow: hidden;
+}
+
+.wishlist-items li:last-child {
+    border-bottom: none;
+}
+
+/* Item Image Styles */
+.wishlist-items img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    margin-right: 15px;
+    border-radius: 4px;
+}
+
+/* Item Name Styles */
+.wishlist-items p {
+    margin: 0;
+    font-size: 16px;
+    color: #333;
+    flex: 1;
+}
+
+/* Styles for the Remove Button */
+.remove-form {
+    margin: 0;
+    position: absolute; /* Position the form absolutely */
+    right: 10px; /* Aligns the button to the right */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+}
+
+.remove-form button {
+    background-color: #d9534f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.remove-form button:hover {
+    background-color: #c9302c;
+}
+
+/* Empty State Message */
+.wishlist-items li.empty {
+    text-align: center;
+    color: #999;
+}
+
+#continue {
+    margin: 30px 0px 0px 370px;
+    font-size: 22px;
+    font-weight: bold;
+    color:#7F0019
+}

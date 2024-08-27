@@ -1,0 +1,62 @@
+.notification-bar {
+    padding: 10px;
+    display: flex;
+    justify-content: center; /* Align spans horizontally */
+    align-items: center; /* Center spans vertically */
+    padding-bottom: 2px;
+}
+
+.text1, .text2, .text3 {
+    display: inline-block; /* Ensure spans are inline */
+}
+
+.text1 {
+    font-size: 11px; /* Half the size of text 2 */
+    margin-right: 5px; /* Add some space between texts */
+    color: #7F0019;
+    font-weight: bold;
+    padding-bottom: 3px;
+}
+
+.text2, .text3 {
+    font-size: 15px;
+    margin-right: 5px;
+    color: #6D6D72;
+    font-weight: 700;
+}
+.text3 {
+    font-weight: 825;
+    font-size: 17px;
+}
+
+.text4 {
+    font-size: 18px; /* Slightly bigger than text 2 */
+    margin-left: 5px; /* Add some space between texts */
+    margin-bottom: 5px;
+    color: #7F0019;
+    font-weight: 550;
+}
+
+.horizontal-line {
+    width: 100%; /* Line spans the entire width of the page */
+    height: 1px; /* Thickness of the line */
+    background-color: #DEDEDE; /* Grey color */
+    margin-top: 4px;
+}
+
+.logo {
+    width: 160px; /* Set width */
+    height: auto;
+    margin-left: 115px;
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+.category_text {
+    color: #3C3C43;
+    margin-left: 20px;
+    margin-right: 10px;
+    font-weight: 700;
+    margin-top: 20px; /* Adjust as needed */
+    display: inline-block;
+}

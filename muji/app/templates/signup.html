@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    {{ block.super }}
+    <!-- Required meta tags -->
+    <link rel="stylesheet" href="{% static 'staticfiles/css/signup.css' %}">
+    <title>Hello, world!</title>
+    {% endblock %}
+  </head>
+  <body>
+    {% block content %}
+    <h2 id="signup-form-title">Sign up Form</h2>
+    <form method="post" class="signup-form">
+      {% csrf_token %}
+      {% for field in form %}
+      <p>
+        {{ field.label_tag }} <span style="color: #7F0019; vertical-align: super;"> *</span>
+      <br>
+        {{ field }}
+        {% if field.help_text %}
+          <small>{{ field.help_text }}</small>
+        {% endif %}
+      
+    </p>
+  {% endfor %}
+  <p style="color: #7F0019">* fields are required</p>
+  <button type="submit">Sign up</button>
+</form>
+{% endblock %}
+</body>
+</html>

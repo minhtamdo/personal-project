@@ -1,0 +1,366 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    {% block head %}
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="shortcut icon" href="#">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f450c925de.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'staticfiles/css/index.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="{% static 'staticfiles/js/index.js' %}"></script>
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <title>Hello, world!</title>
+    {% endblock %}
+
+  </head>
+  <body>
+    <div class="notification-bar">
+      <span class="text1">Online store only</span>
+      <span class="text2">Purchase clothing, daily necessities, and other eligible products for </span>
+      <span class="text3">5,000 yen or more (tax included)</span>
+      <span class="text4">Free shipping</span>
+  </div>
+  <div class="horizontal-line"></div>
+  <div class="header_menu" id="header_menu">
+    <a href="{% url 'index' %}">
+      <img class= "logo" src="https://welcometojapan.jp/wp-content/uploads/sites/6/2022/10/%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88-2022-10-26-11.39.10.png" alt="Muji logo">
+    </a>
+    <div class="dropdown">
+      <button class="category_text" id="first_category">Clothing</button>
+      <div class="dropdown-content">
+        <div class="row">
+          <div class="column">
+            <h5>Men</h5>
+            <a href="{% url 'product_class_detail' pk=4 %}">Shirts</a>
+            <a href="{% url 'product_class_detail' pk=5 %}">T-shirts & polo shirts</a>
+            <a href="{% url 'product_class_detail' pk=7 %}">Knit cardigans</a>
+            <a href="{% url 'product_class_detail' pk=23 %}">Sweaters</a>
+            <a href="{% url 'product_class_detail' pk=24 %}">Jackets</a>
+            <a href="{% url 'product_class_detail' pk=25 %}">Pants</a>
+            <a href="{% url 'product_class_detail' pk=26 %}">Underwear</a>
+            <a href="{% url 'product_class_detail' pk=27 %}">Loungewear</a>
+            <a href="{% url 'product_class_detail' pk=28 %}">Socks</a>
+          </div>
+          <div class="column">
+            <h5>Women</h5>
+            <a href="{% url 'product_class_detail' pk=1 %}">T-Shirts</a>
+            <a href="{% url 'product_class_detail' pk=2 %}">Dresses and Tunics</a>
+            <a href="{% url 'product_class_detail' pk=3 %}">Shirts and blouses</a>
+            <a href="{% url 'product_class_detail' pk=29 %}">Knit cardigans</a>
+            <a href="{% url 'product_class_detail' pk=30 %}">Pants and Skirts</a>
+            <a href="{% url 'product_class_detail' pk=31 %}">Sweaters</a>
+            <a href="{% url 'product_class_detail' pk=32 %}">Jackets</a>
+            <a href="{% url 'product_class_detail' pk=33 %}">Maternity</a>
+            <a href="{% url 'product_class_detail' pk=34 %}">Underwear</a>
+            <a href="{% url 'product_class_detail' pk=35 %}">Loungewear</a>
+            <a href="{% url 'product_class_detail' pk=36 %}">Socks & tights</a>
+          </div>
+          <div class="column">
+            <h5>Kid</h5>
+            <a href="{% url 'product_class_detail' pk=37 %}">Baby/Newborn (50-100cm)</a>
+            <a href="{% url 'product_class_detail' pk=38 %}">Kids (110-150cm)</a>
+            <a href="{% url 'product_class_detail' pk=39 %}">Pajamas</a>
+            <a href="{% url 'product_class_detail' pk=40 %}">Underwear</a>
+            <a href="{% url 'product_class_detail' pk=9 %}">Socks</a>
+            <a href="{% url 'product_class_detail' pk=10 %}">Accesories</a>
+            <h5>Accesories</h5>
+            <a href="{% url 'product_class_detail' pk=11 %}">Bags</a>
+            <a href="{% url 'product_class_detail' pk=12 %}">Hats, scarfs, sunglasses</a>
+            <a href="{% url 'product_class_detail' pk=13 %}">Wallets and belts</a>
+          </div>
+          <div class="column">
+            <h5>Recommended</h5>
+            <a href="#">Featured</a>
+            <a href="#">New item</a>
+            <a href="#">SALE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown" id="dropdown-housewares">
+      <button class="category_text" id="second_category">Housewares</button>
+      <div class="dropdown-content">
+        <div class="row">
+          <div class="column">
+            <h5>Travel</h5>
+            <a href="{% url 'product_class_detail' pk=41 %}">Carry bags</a>
+            <a href="{% url 'product_class_detail' pk=42 %}">Sorting cases</a>
+            <a href="{% url 'product_class_detail' pk=43 %}">Passport cases and pouches</a>
+            <a href="{% url 'product_class_detail' pk=44 %}">Electronics accessories</a>
+            <a href="{% url 'product_class_detail' pk=45 %}">Neck pillows and slippers</a>
+            <h5>Stationary</h5>
+            <a href="{% url 'product_class_detail' pk=46 %}">Office supplies</a>
+            <a href="{% url 'product_class_detail' pk=47 %}">Planners and calendars</a>
+            <a href="{% url 'product_class_detail' pk=48 %}">Notebooks & sticky notes</a>
+            <a href="{% url 'product_class_detail' pk=49 %}">Cards and envelopes</a>
+          </div>
+          <div class="column">
+            <h5>Kitchen supplies</h5>
+            <a href="{% url 'product_class_detail' pk=50 %}">Bottles and pitchers</a>
+            <a href="{% url 'product_class_detail' pk=51 %}">Storage containers</a>
+            <a href="{% url 'product_class_detail' pk=52 %}">Kitchen tools</a>
+            <a href="{% url 'product_class_detail' pk=53 %}">Cookware</a>
+            <a href="{% url 'product_class_detail' pk=54 %}">Aprons and mittens</a>
+            <h5>Tableware</h5>
+            <a href="{% url 'product_class_detail' pk=55 %}">Chopsticks and cutlery</a>
+            <a href="{% url 'product_class_detail' pk=56 %}">Placemats and coasters</a>
+            <a href="{% url 'product_class_detail' pk=57 %}">Serving trays</a>
+          </div>
+          <div class="column">
+            <h5>Furniture</h5>
+            <a href="{% url 'product_class_detail' pk=58 %}">Beds and mattresses</a>
+            <a href="{% url 'product_class_detail' pk=59 %}">Sofa</a>
+            <a href="{% url 'product_class_detail' pk=60 %}">Storage</a>
+            <a href="{% url 'product_class_detail' pk=61 %}">Desks, tables, chairs</a>
+            <h5>Interior goods</h5>
+            <a href="{% url 'product_class_detail' pk=62 %}">Cushions</a>
+            <a href="{% url 'product_class_detail' pk=63 %}">Curtain</a>
+            <a href="{% url 'product_class_detail' pk=64 %}">Rugs and Mats</a>
+            <h5>Bathroom supplies</h5>
+            <a href="{% url 'product_class_detail' pk=66 %}">Bath and toilet supplies</a>
+            <a href="{% url 'product_class_detail' pk=67 %}">Washing and laundry supplies</a>
+          </div>
+          <div class="column">
+            <h5>Recommended</h5>
+            <a href="#">Featured</a>
+            <a href="#">New item</a>
+            <a href="#">SALE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="category_text" id="third_category">Food</button>
+      <div class="dropdown-content">
+        <div class="row">
+          <div class="column">
+            <h5>Confectionery</h5>
+            <a href="{% url 'product_class_detail' pk=68 %}">Japanese sweets</a>
+            <a href="{% url 'product_class_detail' pk=69 %}">Western sweets</a>
+            <a href="{% url 'product_class_detail' pk=70 %}">Snacks and nuts</a>
+            <a href="{% url 'product_class_detail' pk=71 %}">Chocolate</a>
+            <h5>Beverages</h5>
+            <a href="{% url 'product_class_detail' pk=72 %}">Tea</a>
+            <a href="{% url 'product_class_detail' pk=73 %}">Coffee</a>
+            <a href="{% url 'product_class_detail' pk=74 %}">Canned and bottled drinks</a>
+          </div>
+          <div class="column">
+            <h5>Frozen food and ice cream</h5>
+            <a href="{% url 'product_class_detail' pk=75 %}">Rice and noodles</a>
+            <a href="{% url 'product_class_detail' pk=76 %}">Side dishes and stews</a>
+            <a href="{% url 'product_class_detail' pk=77 %}">Meal kits</a>
+            <a href="{% url 'product_class_detail' pk=78 %}">Ice cream</a>
+            <a href="{% url 'product_class_detail' pk=79 %}">Desserts and snacks</a>
+          </div>
+          <div class="column">
+            <h5>Retort/Freeze-Dried</h5>
+            <a href="{% url 'product_class_detail' pk=80 %}">Soup</a>
+            <a href="{% url 'product_class_detail' pk=81 %}">Pasta and sauce</a>
+            <a href="{% url 'product_class_detail' pk=82 %}">Hotpot</a>
+            <a href="{% url 'product_class_detail' pk=83 %}">Curry</a>
+            <h5>Dried foods & seasonings</h5>
+            <a href="{% url 'product_class_detail' pk=84 %}">Processed goods</a>
+            <a href="{% url 'product_class_detail' pk=85 %}">Seasonings</a>
+            <a href="{% url 'product_class_detail' pk=86 %}">Stock and miso</a>
+            <a href="{% url 'product_class_detail' pk=87 %}">Furikake and rice</a>
+          </div>
+          <div class="column">
+            <h5>Recommended</h5>
+            <a href="#">Featured</a>
+            <a href="#">New item</a>
+            <a href="#">SALE</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="category_text" id="fourth_category">Self-care</button>
+      <div class="dropdown-content">
+        <div class="row">
+          <div class="column">
+            <h5>Skincare</h5>
+            <a href="{% url 'product_class_detail' pk=88 %}">Facial cleansers</a>
+            <a href="{% url 'product_class_detail' pk=89 %}">Toners</a>
+            <a href="{% url 'product_class_detail' pk=90 %}">Moisturisers and creams</a>
+            <a href="{% url 'product_class_detail' pk=91 %}">Facial Masks</a>
+            <a href="{% url 'product_class_detail' pk=92 %}">Sunscreen</a>
+            <h5>Haircare</h5>
+            <a href="{% url 'product_class_detail' pk=93 %}">Shampoo & Conditioner</a>
+            <a href="{% url 'product_class_detail' pk=94 %}">Treatments</a>
+            <a href="{% url 'product_class_detail' pk=95 %}">Hair Styling</a>
+          </div> 
+          <div class="column">
+            <h5>Beauty tools</h5>
+            <a href="{% url 'product_class_detail' pk=96 %}">Brush cleaners</a>
+            <a href="{% url 'product_class_detail' pk=97 %}">Beauty Blender and Applicators</a>
+            <a href="{% url 'product_class_detail' pk=98 %}">Nails</a>
+            <a href="{% url 'product_class_detail' pk=99 %}">Eyelash curler & tools</a>
+          </div>
+          <div class="column">
+            <h5>Makeup</h5>
+            <a href="{% url 'product_class_detail' pk=100 %}">Eyes</a>
+            <a href="{% url 'product_class_detail' pk=101 %}">Face</a>
+            <a href="{% url 'product_class_detail' pk=102 %}">Lips</a>
+          </div>
+          <div class="column">
+            <h5>Recommended</h5>
+            <a href="#">Featured</a>
+            <a href="#">New item</a>
+            <a href="#">SALE</a>
+          </div>
+        </div>
+      </div>  
+    </div>
+    <form method="GET" action="{% url 'search_items' %}" class="search-form">
+      <input type="text" name="q" placeholder="Search items..." class="search-input">
+      <button type="submit" class="search-button">Search</button>
+  </form>
+  <div class="dropdown-right">
+    <button class="dropbtn"><i class="fas fa-user"></i></button>
+    {% if user.is_authenticated %}
+    <div class="dropdown-content-right">
+        <a href="{% url 'profile' %}">Profile</a>
+        <a href="{% url 'logout' %}">Log out</a>
+    </div>
+    {% else %}
+    <div class="dropdown-content-right">
+      <a href="{% url 'signup' %}">Register</a>
+      <a href="{% url 'login' %}">Log in</a>
+  </div>
+  {% endif %}
+</div>
+<a href="{% url 'view_cart' %}" class="btn btn-primary cart-button">
+  <i class="fas fa-shopping-cart"></i>
+</a>
+<a href="{% if user.is_authenticated %}{% url 'wishlist_view' %}{% else %}{% url 'login' %}?next={{ request.path }}{% endif %}" class="material-symbols-outlined" style="text-decoration: none;">
+  favorite
+</a>
+  </div>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    {% block content %}
+    <div class = "notification-box">
+      <ul>
+        <li>Notice regarding changes to cash on delivery payment fees</li>
+        <li>Announcement regarding the end of MUJI passport PIN recovery support</li>
+      </ul>
+    </div>
+    <div id="promo-slider">
+      <ul id="slideWrap"> 
+        <li><img src="https://www.thestudentpocketguide.com/wp-content/uploads/MUJI-Student-Discount-759x500.jpg" alt=""></li>
+        <li><img src="https://www.muji.com/hk/store/112_tmt/img/thumb.jpg" alt=""></li>
+        <li><img src="https://orderhanghanquoc.com/_next/image?url=https%3A%2F%2Fcloude.orderhanghanquoc.com%2F2024%2F05%2F07%2FCapture1.PNG&w=3840&q=75" alt=""></li>
+        <li><img src="https://images.squarespace-cdn.com/content/v1/5c34764c297114ca20d6777b/8f815cb5-194f-406c-bcb6-aba6e7610f19/HTH+30x15.png" alt=""></li>
+        <li><img src="https://images.squarespace-cdn.com/content/v1/5ac2ddf285ede15e39a57666/1554365237644-I8AX19UELS4M82ZRNHZM/ke17ZwdGBToddI8pDm48kKtijf5x5S0rIV7X_qDH3dB7gQa3H78H3Y0txjaiv_0fDoOvxcdMmMKkDsyUqMSsMWxHk725yiiHCCLfrh8O1z5QPOohDIaIeljMHgDF5CVlOqpeNLcJ80NK65_fV7S1UaZbTVdO5VSPAOxIcVIbmIFLIFeVDbQiz7iBIgNCzklBDD2o6CESiqIlH5ssNFrtmA/MUJI_GINZA_5F_Household.jpg" alt=""></li>
+        <li><img src="https://images.squarespace-cdn.com/content/v1/5c34764c297114ca20d6777b/8f815cb5-194f-406c-bcb6-aba6e7610f19/HTH+30x15.png" alt=""></li>
+      </ul>
+      <a id="prev">&#10094;</a>
+      <a id="next">&#10095;</a>
+    </div>
+    <br>
+    <h2 class="slide-header">Popular Categories</h2>
+    <div id="category-slider">
+      <ul id="slide-wrap"> 
+        <li>
+          <img src="https://cdn11.bigcommerce.com/s-4b0oh2xvlj/images/stencil/1280x1280/products/6648/694693/4550583758295_1260__13004.1720711395.jpg?c=1" alt="Women's T-shirts">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=1 %}">Women's T-shirts</a></div>
+          </div></li>
+        <li>
+          <img src="https://img.muji.net/img/item/4550583800611_1260.jpg" alt="Men's T-shirts">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=5 %}">Men's T-shirts & polo shirts</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://img.muji.net/img/item/4550583758202_1260.jpg" alt="Women's underwear">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=34 %}">Underwear</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSerwjk4m240bWYL5jRpaw9Fa12GvzzF56YSTxPuyDKbpqO6vmHd5GH8FMvFwQ_51HaOIY&usqp=CAU" alt="Furniture">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=59 %}">Furniture</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://c.imgz.jp/765/80672765/80672765b_39_d_215.jpg" alt="Bedding">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=58 %}">Bedding</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://img.muji.net/img/item/4547315527021_400.jpg" alt="Storage">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=60 %}">Storage</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVqgi0ZZp0QCJ7mh1-e_lH4ms5egkkpCvn6g&s" alt="Freeze-Dried">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=80 %}">Soup</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://img.muji.net/img/item/4550344608685_400.jpg" alt="Beverages">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=74 %}">Canned drinks</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQQNGr051kV9gaB9QEBiYk3NtFqiKLccgVNZw&s" alt="Sunscreen">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=92 %}">Sunscreen</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://img.muji.net/img/item/4548076448860_1260.jpg" alt="Facial cleansers">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=88 %}">Facial cleansers</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://static.wixstatic.com/media/e57753_186ce783e562497090269e67b7893b57~mv2.jpg/v1/fill/w_440,h_440,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/e57753_186ce783e562497090269e67b7893b57~mv2.jpg" alt="Curry">
+          <div class="overlay">
+            <div class="text"><a href="{% url 'product_class_detail' pk=83 %}">Curry</a></div>
+          </div>
+        </li>
+        <li>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Plus_symbol.svg/500px-Plus_symbol.svg.png" alt="More">
+        </li>
+      </ul>
+      <a id="prev-cat">&#10094;</a>
+      <a id="next-cat">&#10095;</a>
+    </div>
+    <br>
+    <br>
+    <div id="promo-slider1">
+      <ul id="slideWrap1"> 
+        <li><img src="https://muji.ca/cdn/shop/collections/clear_care_grid_1200x600_crop_center.jpg?v=1704399871" alt=""></li>
+        <li><img src="https://www.muji.com/hk-en/campaign/mymujitogo/img/game_banner.jpg" alt=""></li>
+        <li><img src="https://www.muji.com/jp/ja/special-feature/healthandbeauty/cosmetics/assets/img/kv-desktop.webp" alt=""></li>
+        <li><img src="https://www.muji.com/hk-en/campaign/2022AW_MUJIwear/img/kv.jpg" alt=""></li>
+        <li><img src="https://www.muji.com/jp/ja/special-feature/dailygoods/mujitogo/assets/img/hero-desktop.webp" alt=""></li>
+        <li><img src="https://www.muji.com/jp/ja/special-feature/food/curry/vote/assets/img/hero-result-desktop.webp" alt=""></li>
+      </ul>
+      <a id="prev1">&#10094;</a>
+      <a id="next1">&#10095;</a>
+    </div>
+    <br>
+    <br>
+  <br>
+    {% endblock %}
+
+  </body>
+</html>

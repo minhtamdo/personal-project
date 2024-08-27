@@ -1,0 +1,49 @@
+
+
+/* Style the form container */
+
+h2 {
+    margin-top: 150px;
+    color: #3C3C43; /* Heading text color */
+    margin-left: 50px;
+    font-weight: bold; /* Center align heading */
+    margin-bottom: 20px;
+}
+/* Input fields and buttons */
+.form-control {
+    width: 50%;
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    border-color: black;
+    background-color: white; /* Input background color */
+    color: white; /* Input text color */
+}
+
+.btn-primary {
+    background-color: #7F0019; /* Button background color */
+    color: white; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: 49%;
+}
+
+.btn-primary:hover {
+    background-color: #3C3C43; /* Button background color on hover */
+}
+
+/* Optional: Additional styling for the message div */
+div.message {
+    color: #7F0019; /* Message text color */
+    background-color: #FFE3E3; /* Message background color */
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+h5 {
+    margin-left: 50px;
+}
